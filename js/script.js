@@ -1,5 +1,5 @@
-let nameLastName = document.getElementById("name-lastname");
-let km = document.getElementById("km");
+let nameLastName = document.querySelector(".name-lastname");
+let km = document.querySelector(".km");
 let age = document.querySelector("#age");
 
 let generaBtn = document.getElementById("genera");
@@ -15,7 +15,7 @@ const over65 = 3;
 let ticketVisibility = false;
 
 generaBtn.addEventListener("click", function () {
-  console.log(age.value);
+  console.log(nameLastName.value);
   console.log(km.value);
 
   const kmValue = km.value;
@@ -35,14 +35,15 @@ generaBtn.addEventListener("click", function () {
   if (isNaN(kmValue)) {
     messaggio = `Inserire dei km validi`;
   } else if (age.value == minorenne) {
-    messaggio = `Il tuo biglietto costava ${costoAlKmDecimale}€, ma con lo sconto sono ${costoBigliettoMinorenni}€ perché sei minorenne`;
+    messaggio = `${costoBigliettoMinorenni}€`;
   } else if (age.value == over65) {
-    messaggio = `Il tuo biglietto costava ${costoAlKmDecimale}€, ma con lo sconto sono ${costoBigliettoOver}€ perché sei Over65`;
+    messaggio = `${costoBigliettoOver}€`;
   } else {
-    messaggio = `Il tuo biglietto costa ${costoAlKmDecimale}€`;
+    messaggio = `${costoAlKmDecimale}€`;
   }
 
-  document.getElementById("Costo").innerHTML = messaggio;
+  document.querySelector(".ticket-name").innerHTML = nameLastName.value;
+  document.querySelector(".Costo").innerHTML = messaggio;
 });
 
 annullaBtn.addEventListener("click", function () {
