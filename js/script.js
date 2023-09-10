@@ -17,7 +17,10 @@ let ticketVisibility = false;
 let passName = "Passenger Name: ";
 let ticketType;
 
-
+const number = "NO: " + (Math.floor(Math.random() * (28394 - 2000 + 1) + 2000));
+const seat = "Seat: " + (Math.floor(Math.random() * (20 - 1 + 1) + 1));
+console.log(seat);
+const platform ="Platform: " + (Math.floor(Math.random() * (10 - 1 + 1) + 1));
 
 const now = new Date();
 const today = now.getDate();
@@ -87,11 +90,14 @@ generaBtn.addEventListener("click", function () {
     ticketType = "Adult Ticket - "
   }
 
+  document.querySelector(".number").innerHTML = number;
   document.querySelector(".pass-name").innerHTML = passName + nameLastName.value;
   document.querySelector(".cost").innerHTML = messaggio;
-  document.querySelector(".ticket-type").innerHTML = ticketType;
+  document.querySelector(".seat").innerHTML = seat;
+  document.querySelector(".platform").innerHTML = platform;
   document.querySelector(".dep-time").innerHTML = depTime;
   document.querySelector(".date").innerHTML = date;
+  document.querySelector(".ticket-type").innerHTML = ticketType;
 });
 
 annullaBtn.addEventListener("click", function () {

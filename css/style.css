@@ -7,5 +7,24 @@
 }
 
 .ticket{
-  background-color: #F2F4F5;
+  width: 70%;
+  background-color: #b1d2e2;
+}
+
+.ticket span{
+  font-weight: 500;
+}
+
+.train-info{
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+.fa-train-subway{
+  font-size: 170px;
+  color: #203951;
+}
+
+.ticket .row div:nth-child(3){
+  background-color: #203951;
 }
