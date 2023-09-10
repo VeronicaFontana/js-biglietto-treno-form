@@ -1,3 +1,4 @@
+/* NOME, KM, ANNI, TIPOLOGIA TICKET */
 let nameLastName = document.querySelector(".name-lastname");
 let km = document.querySelector(".km");
 let age = document.querySelector("#age");
@@ -5,23 +6,22 @@ let age = document.querySelector("#age");
 let generaBtn = document.getElementById("genera");
 let annullaBtn = document.getElementById("annulla");
 
-document.querySelector(".ticket").style.display = "none";
-
 let messaggio;
 const minorenne = 1;
 const maggiorenne = 2;
 const over65 = 3;
-
-let ticketVisibility = false;
-
-let passName = "Passenger Name: ";
 let ticketType;
+let passName = "Passenger Name: ";
 
+document.querySelector(".ticket").style.display = "none";
+
+/* DATI RANDOMICI */
 const number = "NO: " + (Math.floor(Math.random() * (28394 - 2000 + 1) + 2000));
 const seat = "Seat: " + (Math.floor(Math.random() * (20 - 1 + 1) + 1));
 console.log(seat);
 const platform ="Platform: " + (Math.floor(Math.random() * (10 - 1 + 1) + 1));
 
+/* DATA E ORA */
 const now = new Date();
 const today = now.getDate();
 const month = now.getMonth() + 1; 
@@ -59,6 +59,7 @@ const minute = now.getMinutes();
 const depTime = "Departure Time " + hour + ":" + minute;
 console.log(date);
 
+/* CLICK BOTTONE GENERA */
 generaBtn.addEventListener("click", function () {
   console.log(nameLastName.value);
   console.log(km.value);
@@ -100,6 +101,7 @@ generaBtn.addEventListener("click", function () {
   document.querySelector(".ticket-type").innerHTML = ticketType;
 });
 
+/* CLICK BOTTONE ANNULLA */
 annullaBtn.addEventListener("click", function () {
   document.querySelector(".ticket").style.display = "none";
 });

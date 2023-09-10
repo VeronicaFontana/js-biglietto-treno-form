@@ -14,12 +14,22 @@
   <title>Forma biglietto del treno</title>
 </head>
 <body>
-  <section class="sezione vh-100">
+  <section class="sezione py-5 vh-100">
+    <!-- CALCOLO DEL COSTO -->
     <div class="container py-3 text-center">
-      <div class="info-box">
-        <h1 class="text-light mb-4">Calcola il prezzo del tuo biglietto</h1>
-        <input type="text" class="name-lastname">
-        <input type="text" class="km mx-5">
+      <h1 class="text-light mb-4">Calcola il prezzo del tuo biglietto</h1>
+
+      <div class="info-box text-light fw-bold d-flex justify-content-center">
+        <div>
+          <label for="name-lastname">Il tuo nome</label>
+          <input type="text" class="name-lastname" id="name-lastname">
+        </div>
+
+        <div class="mx-5">
+          <label for="km">Km da percorrere</label>
+          <input type="text" class="km" id="km">
+        </div>
+
         <select name="" id="age">
           <option value="1" id="minorenne">Minorenne</option>
           <option value="2" id="maggiorenne">Maggiorenne</option>
@@ -28,19 +38,19 @@
       </div>
       
       <div class="btn-box my-5">
-        <button id="genera" class="mx-4">Genera</button>
-        <button id="annulla">Annulla</button>
+        <button type="button" id="genera" class="mx-4 btn btn-success">Genera</button>
+        <button type="button" id="annulla" class="btn btn-danger">Annulla</button>
       </div>
-      
-
     </div>
-
+    
+    <!-- BIGLIETTO -->
     <section class="container mt-4">
       <div class="ticket rounded mx-auto">
         <div class="row">
           <div class="train-icon col-3 text-center my-auto">
             <i class="fa-solid fa-train-subway"></i>
           </div>
+
           <div class="ticket-info col-6 d-flex flex-column text-center justify-content-center ">
             <div>
               <h2 class="mb-3 fw-bold fs-1">Train Ticket</h2>
@@ -55,12 +65,12 @@
               <span class="ticket-type"></span>
               <span class="cost"></span>
             </div>
+
           </div>
           <div class="col-3">
             <img src="img/admit.png" alt="">
           </div>
         </div>
-
       </div>
     </section>
   </section>

@@ -1,9 +1,11 @@
 .sezione{
-  background-color: red;
+  background-image: url(../img/station.jpg);
+  background-size: contain;
 }
 
-.container{
+.sezione .container:first-child{
   border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.453);
 }
 
 .ticket{
