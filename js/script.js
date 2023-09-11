@@ -104,5 +104,7 @@ generaBtn.addEventListener("click", function () {
 /* CLICK BOTTONE ANNULLA */
 annullaBtn.addEventListener("click", function () {
   document.querySelector(".ticket").style.display = "none";
+  nameLastName.value = "";
+  km.value = "";
 });
 
