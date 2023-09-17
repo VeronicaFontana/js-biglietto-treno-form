@@ -16,10 +16,10 @@ let passName = "Passenger Name: ";
 document.querySelector(".ticket").style.display = "none";
 
 /* DATI RANDOMICI */
-const number = "NO: " + (Math.floor(Math.random() * (28394 - 2000 + 1) + 2000));
-const seat = "Seat: " + (Math.floor(Math.random() * (20 - 1 + 1) + 1));
+const number = "NO: " + randomizer(28394, 2000);
+const seat = "Seat: " + randomizer(20, 1);
 console.log(seat);
-const platform ="Platform: " + (Math.floor(Math.random() * (10 - 1 + 1) + 1));
+const platform ="Platform: " +  randomizer(10, 1);
 
 /* DATA E ORA */
 const now = new Date();
@@ -27,37 +27,49 @@ const today = now.getDate();
 const month = now.getMonth() + 1; 
 let currentMonth;
 
-  if (month == 1) {
+switch (month){
+  case 1:
     currentMonth = "Gennaio";
-  } else if (month == 2) {
+    break;
+  case 2:
     currentMonth = "Febbraio";
-  } else if (month == 3) {
+    break;
+  case 3:
     currentMonth = "Marzo";
-  } else if (month == 4) {
+    break;
+  case 4:
     currentMonth = "Aprile";
-  } else if (month == 5) {
+    break;
+  case 5:
     currentMonth = "Maggio";
-  } else if (month == 6) {
+    break;
+  case 6:
     currentMonth = "Giugno";
-  } else if (month == 7) {
+    break;
+  case 7:
     currentMonth = "Luglio";
-  } else if (month == 8) {
+    break;
+  case 8:
     currentMonth = "Agosto";
-  } else if (month == 9) {
+    break;
+  case 9:
     currentMonth = "Settembre";
-  } else if (month == 10) {
+    break;
+  case 10:
     currentMonth = "Ottobre";
-  } else if (month == 11) {
+    break;
+  case 11:
     currentMonth = "Novembre";
-  } else {
+    break;
+  case 12:
     currentMonth = "Dicembre";
-  }
+    break;
+}
 
 const date = "Date: " + today + " " + currentMonth;
 const hour = now.getHours();
 const minute = now.getMinutes();
 const depTime = "Departure Time " + hour + ":" + minute;
-console.log(date);
 
 /* CLICK BOTTONE GENERA */
 generaBtn.addEventListener("click", function () {
@@ -99,6 +111,7 @@ generaBtn.addEventListener("click", function () {
   document.querySelector(".dep-time").innerHTML = depTime;
   document.querySelector(".date").innerHTML = date;
   document.querySelector(".ticket-type").innerHTML = ticketType;
+  
 });
 
 /* CLICK BOTTONE ANNULLA */
@@ -107,4 +120,11 @@ annullaBtn.addEventListener("click", function () {
   nameLastName.value = "";
   km.value = "";
 });
+
+
+function randomizer(min, max){
+  const random = Math.floor(Math.random() * (max - min + 1) + min);
+  return random;
+}
+
 
